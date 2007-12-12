@@ -1,17 +1,17 @@
 %define rname egenix-mx-base
 
-Name: python-%{rname}
-Version: 2.0.6
-Release: %mkrel 3
-Summary: Python extensions from eGenix
-Source0: %{rname}-%{version}.tar.bz2
-License: eGenix.com Public License
-Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-buildroot
-Url: http://www.egenix.com/files/python/eGenix-mx-Extensions.html
-BuildRequires: python-devel 
-Obsoletes: egenix-mx-base
+Name:           python-%{rname}
+Version:        3.0.0
+Release:        %mkrel 1
+Summary:        Python extensions from eGenix
+License:        eGenix.com Public License
+Group:          Development/Python
+URL: http://www.egenix.com/files/python/eGenix-mx-Extensions.html
+Source0:        %{rname}-%{version}.tar.gz
+Obsoletes: %{rname} < %{version}-%{release}
 Provides: egenix-mx-base = %{version}-%{release}
+%py_requires -d
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 The eGenix mx Extension Series are a collection of
@@ -28,20 +28,20 @@ distributed under the eGenix.com Public License.
 
 %prep
 %setup -q -n %{rname}-%{version}
-find . -type f -exec sed -i 's|/usr/local.*python|/usr/bin/python|' {} \;
+%{_bindir}/find . -type f | %{_bindir}/xargs -t %{__sed} -i 's|/usr/local.*python|/usr/bin/python|'
 
 %build
-python setup.py   build
+%{__python} setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT --prefix=%_prefix --no-compile
+%{__rm} -rf %{buildroot}
+%{__python} setup.py install --root=%{buildroot} --prefix=%_prefix --no-compile
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
+%defattr(-,root,root,0755)
 %doc README mx/Doc mx/DateTime/Doc mx/Proxy/Doc mx/BeeBase/Doc mx/Queue/Doc mx/Stack/Doc mx/TextTools/Doc mx/Tools/Doc mx/DateTime/LICENSE mx/DateTime/COPYRIGHT
 %{python_sitearch}/mx
 %{python_sitelib}/mx
