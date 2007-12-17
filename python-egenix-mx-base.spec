@@ -11,7 +11,6 @@ Source0:        %{rname}-%{version}.tar.gz
 Obsoletes: %{rname} < %{version}-%{release}
 Provides: egenix-mx-base = %{version}-%{release}
 %py_requires -d
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 The eGenix mx Extension Series are a collection of
