@@ -2,7 +2,7 @@
 
 Name:           python-%{rname}
 Version:        3.0.0
-Release:        %mkrel 1
+Release:        %mkrel 3
 Summary:        Python extensions from eGenix
 License:        eGenix.com Public License
 Group:          Development/Python
