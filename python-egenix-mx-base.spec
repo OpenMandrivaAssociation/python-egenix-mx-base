@@ -2,12 +2,13 @@
 
 Name:           python-%{rname}
 Version:        3.1.1
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Python extensions from eGenix
 License:        eGenix.com Public License
 Group:          Development/Python
 URL: http://www.egenix.com/files/python/eGenix-mx-Extensions.html
 Source0:        http://downloads.egenix.com/python/%{rname}-%{version}.tar.gz
+Patch0:         egenix-mx-base-fix_underlinking.diff
 Obsoletes: %{rname} < %{version}-%{release}
 Provides: egenix-mx-base = %{version}-%{release}
 %py_requires -d
@@ -29,6 +30,7 @@ distributed under the eGenix.com Public License.
 %prep
 %setup -q -n %{rname}-%{version}
 %{_bindir}/find . -type f | %{_bindir}/xargs -t %{__sed} -i 's|/usr/local.*python|/usr/bin/python|'
+%patch0 -p0
 
 %build
 %{__python} setup.py build
