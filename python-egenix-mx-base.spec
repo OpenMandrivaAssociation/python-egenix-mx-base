@@ -29,7 +29,7 @@ distributed under the eGenix.com Public License.
 
 %prep
 %setup -q -n %{rname}-%{version}
-%{_bindir}/find . -type f | %{_bindir}/xargs -t %{__sed} -i 's|/usr/local.*python|/usr/bin/python|'
+%{_bindir}/find . -type f | grep .py | %{_bindir}/xargs -t %{__sed} -i 's|/usr/local.*python|/usr/bin/python|'
 %patch0 -p0
 
 %build
