@@ -1,8 +1,8 @@
 %define rname egenix-mx-base
 
 Name:           python-%{rname}
-Version:        3.1.1
-Release:        %mkrel 2
+Version:        3.1.2
+Release:        %mkrel 1
 Summary:        Python extensions from eGenix
 License:        eGenix.com Public License
 Group:          Development/Python
