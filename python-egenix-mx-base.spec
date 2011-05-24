@@ -1,8 +1,8 @@
 %define rname egenix-mx-base
 
 Name:           python-%{rname}
-Version:        3.1.3
-Release:        %mkrel 2
+Version:        3.2.0
+Release:        %mkrel 1
 Summary:        Python extensions from eGenix
 License:        eGenix.com Public License
 Group:          Development/Python
@@ -11,7 +11,7 @@ Source0:        http://downloads.egenix.com/python/%{rname}-%{version}.tar.gz
 Patch0:         egenix-mx-base-fix_underlinking.diff
 Obsoletes: %{rname} < %{version}-%{release}
 Provides: egenix-mx-base = %{version}-%{release}
-%py_requires -d
+BuildRequires:	python-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
@@ -44,9 +44,8 @@ distributed under the eGenix.com Public License.
 
 %files
 %defattr(-,root,root,0755)
-%doc README mx/Doc mx/DateTime/Doc mx/Proxy/Doc mx/BeeBase/Doc mx/Queue/Doc mx/Stack/Doc mx/TextTools/Doc mx/Tools/Doc mx/DateTime/LICENSE mx/DateTime/COPYRIGHT
+%doc README mx/*/Doc
+%doc mx/DateTime/LICENSE mx/DateTime/COPYRIGHT
 %{python_sitearch}/mx
 %{python_sitelib}/mx
 %{py_platsitedir}/*.egg-info
-
-
