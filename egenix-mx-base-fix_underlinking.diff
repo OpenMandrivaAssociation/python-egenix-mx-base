@@ -1,0 +1,11 @@
+--- mxSetup.py~	2008-12-26 02:48:21.000000000 +0100
++++ mxSetup.py	2008-12-26 02:49:10.000000000 +0100
+@@ -1131,7 +1131,7 @@
+     # List of needed include files in form of tuples (libname,
+     # [dir1, dir2,...], pattern); see mx_autoconf.find_library_file()
+     # for details
+-    needed_libraries = ()
++    needed_libraries = [('m',['/usr/lib/','/usr/lib64/'],None),('dl',['/usr/lib/','/usr/lib64/'],None)]
+ 
+     # Include the found library files in the extension output ?  This
+     # causes the files to be copied into the same location as the
