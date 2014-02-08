@@ -2,7 +2,7 @@
 
 Name:		python-%{rname}
 Version:	3.2.4
-Release:	1
+Release:	2
 Summary:	Python extensions from eGenix
 License:	eGenix.com Public License
 Group:		Development/Python
