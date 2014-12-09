@@ -10,7 +10,7 @@ Url:		http://www.egenix.com/files/python/eGenix-mx-Extensions.html
 Source0:	http://downloads.egenix.com/python/%{rname}-%{version}.tar.gz
 Patch0:		egenix-mx-base-fix_underlinking.diff
 Patch1:		mx-3.1.1-lib64.patch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 Provides:	egenix-mx-base = %{version}-%{release}
 
 %description
@@ -33,14 +33,14 @@ find . -type f | grep .py | xargs -t sed -i 's|/usr/local.*python|/usr/bin/pytho
 %patch1 -p1
 
 %build
-python setup.py build
+%{__python2} setup.py build
 
 %install
-python setup.py install --root=%{buildroot} --prefix=%{_prefix} --no-compile
+%{__python2} setup.py install --root=%{buildroot} --prefix=%{_prefix} --no-compile
 
 %files
 %doc README mx/*/Doc
 %doc mx/DateTime/LICENSE mx/DateTime/COPYRIGHT
-%{python_sitearch}/mx
-%{py_platsitedir}/*.egg-info
+%{python2_sitearch}/mx
+%{py2_platsitedir}/*.egg-info
 
