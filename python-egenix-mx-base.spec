@@ -8,6 +8,7 @@ License:	eGenix.com Public License
 Group:		Development/Python
 Url:		http://www.egenix.com/files/python/eGenix-mx-Extensions.html
 Source0:	http://downloads.egenix.com/python/%{rname}-%{version}.tar.gz
+Source100:	python-egenix-mx-base.rpmlintrc
 Patch0:		egenix-mx-base-fix_underlinking.diff
 Patch1:		mx-3.1.1-lib64.patch
 BuildRequires:	pkgconfig(python2)
