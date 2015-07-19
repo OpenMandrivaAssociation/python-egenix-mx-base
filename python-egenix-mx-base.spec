@@ -3,7 +3,7 @@
 Summary:	Python extensions from eGenix
 Name:		python-%{rname}
 Version:	3.2.6
-Release:	8
+Release:	9
 License:	eGenix.com Public License
 Group:		Development/Python
 Url:		http://www.egenix.com/files/python/eGenix-mx-Extensions.html
