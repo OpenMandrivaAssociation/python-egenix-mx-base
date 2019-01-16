@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   egenix-mx-base-3.2.6.tar.gz: 3e21c6eba53a841070a4e9430a85ecf8a28df20f
+sources:
+  egenix-mx-base-3.2.9.tar.gz: 7bce0d094e3e95376d921217ddf44d4491e8c96f

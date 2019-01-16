@@ -2,12 +2,12 @@
 
 Summary:	Python extensions from eGenix
 Name:		python-%{rname}
-Version:	3.2.6
-Release:	10
+Version:	3.2.9
+Release:	1
 License:	eGenix.com Public License
 Group:		Development/Python
 Url:		http://www.egenix.com/files/python/eGenix-mx-Extensions.html
-Source0:	http://downloads.egenix.com/python/%{rname}-%{version}.tar.gz
+Source0:	http://downloads.egenix.com/python/egenix-mx-base-%{version}.tar.gz
 Source100:	python-egenix-mx-base.rpmlintrc
 Patch0:		egenix-mx-base-fix_underlinking.diff
 Patch1:		mx-3.1.1-lib64.patch
@@ -34,14 +34,13 @@ find . -type f | grep .py | xargs -t sed -i 's|/usr/local.*python|/usr/bin/pytho
 %patch1 -p1
 
 %build
-%{__python2} setup.py build
+python setup.py build
 
 %install
-%{__python2} setup.py install --root=%{buildroot} --prefix=%{_prefix} --no-compile
+python setup.py install --root=%{buildroot} --prefix=%{_prefix} --no-compile
 
 %files
 %doc README mx/*/Doc
 %doc mx/DateTime/LICENSE mx/DateTime/COPYRIGHT
-%{python2_sitearch}/mx
+%{py_platsitedir}/mx
 %{py2_platsitedir}/*.egg-info
-
