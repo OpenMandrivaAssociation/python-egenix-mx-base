@@ -6,7 +6,7 @@ Version:	3.2.6
 Release:	11
 License:	eGenix.com Public License
 Group:		Development/Python
-Url:		http://www.egenix.com/files/python/eGenix-mx-Extensions.html
+Url:		https://www.egenix.com/files/python/eGenix-mx-Extensions.html
 Source0:	http://downloads.egenix.com/python/%{rname}-%{version}.tar.gz
 Source100:	python-egenix-mx-base.rpmlintrc
 Patch0:		egenix-mx-base-fix_underlinking.diff
