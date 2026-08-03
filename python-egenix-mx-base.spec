@@ -2,8 +2,8 @@
 
 Summary:	Python extensions from eGenix
 Name:		python-%{rname}
-Version:	3.2.6
-Release:	11
+Version:	3.2.9
+Release:	1
 License:	eGenix.com Public License
 Group:		Development/Python
 Url:		https://www.egenix.com/files/python/eGenix-mx-Extensions.html
@@ -30,8 +30,8 @@ distributed under the eGenix.com Public License.
 %prep
 %setup -qn %{rname}-%{version}
 find . -type f | grep .py | xargs -t sed -i 's|/usr/local.*python|/usr/bin/python|'
-%patch0 -p0
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__python2} setup.py build

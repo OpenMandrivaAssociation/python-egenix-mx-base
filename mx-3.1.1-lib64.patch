@@ -1,6 +1,6 @@
---- egenix-mx-base-3.1.1/mxSetup.py	2008-08-04 13:24:56.000000000 +0100
-+++ egenix-mx-base-3.1.1/mxSetup-new.py	2008-09-15 09:27:04.000000000 +0100
-@@ -2376,7 +2376,7 @@
+--- a/mxSetup.py	2015-08-14 17:04:13.000000000 +0200
++++ b/mxSetup.py	2026-08-03 02:00:45.846412176 +0200
+@@ -5023,7 +5023,7 @@
  
          if self.install_dir is None:
              installobj = self.distribution.get_command_obj('install')
